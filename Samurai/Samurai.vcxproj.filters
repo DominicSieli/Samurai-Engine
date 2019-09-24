@@ -18,16 +18,19 @@
     <ClInclude Include="src\Samurai\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Samurai\EntryPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Samurai\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="src\Samurai\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Samurai.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Samurai\EntryPoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Samurai\Log.h">
+    <ClInclude Include="src\IncludeFiles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Samurai\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IncludeFiles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

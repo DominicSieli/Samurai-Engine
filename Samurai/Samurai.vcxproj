@@ -11,13 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\IncludeFiles.h" />
     <ClInclude Include="src\Samurai\Log.h" />
     <ClInclude Include="src\Samurai\Application.h" />
     <ClInclude Include="src\Samurai\Core.h" />
-    <ClInclude Include="src\Samurai.h" />
     <ClInclude Include="src\Samurai\EntryPoint.h" />
+    <ClInclude Include="src\Samurai.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\IncludeFiles.cpp" />
     <ClCompile Include="src\Samurai\Log.cpp" />
     <ClCompile Include="src\Samurai\Application.cpp" />
   </ItemGroup>
@@ -69,7 +71,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PreprocessorDefinitions>SAMURAI_PLATFORM_WINDOWS;SAMURAI_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Samurai\vendor\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Samurai\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -85,7 +87,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PreprocessorDefinitions>SAMURAI_PLATFORM_WINDOWS;SAMURAI_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Samurai\vendor\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Samurai\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

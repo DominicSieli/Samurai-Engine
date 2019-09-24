@@ -4,10 +4,12 @@ namespace Samurai
 {
 	Application::Application()
 	{
+
 	};
 
 	Application::~Application()
 	{
+
 	};
 
 	void Application::Run()

@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Core.h"
+
 namespace Samurai
 {
-	class __declspec(dllexport) Application
+	class SAMURAI_API Application
 	{
 	public:
 		Application();
