@@ -1,8 +1,9 @@
 #pragma once
 
+#include <memory>
+
 #include "Core.h"
 #include "spdlog/spdlog.h"
-#include "spdlog/fmt/ostr.h"
 
 namespace Samurai
 {
@@ -19,14 +20,14 @@ namespace Samurai
 	};
 }
 
-#define SAMURAI_CORE_TRACE(...)    ::SAMURAI::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define SAMURAI_CORE_INFO(...)     ::SAMURAI::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define SAMURAI_CORE_WARN(...)     ::SAMURAI::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define SAMURAI_CORE_ERROR(...)    ::SAMURAI::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define SAMURAI_CORE_CRITICAL(...) ::SAMURAI::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define SAMURAI_TRACE(...)    ::Samurai::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define SAMURAI_INFO(...)     ::Samurai::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define SAMURAI_WARN(...)     ::Samurai::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define SAMURAI_ERROR(...)    ::Samurai::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define SAMURAI_CRITICAL(...) ::Samurai::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
-#define SAMURAI_TRACE(...)         ::SAMURAI::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define SAMURAI_INFO(...)          ::SAMURAI::Log::GetClientLogger()->info(__VA_ARGS__)
-#define SAMURAI_WARN(...)          ::SAMURAI::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define SAMURAI_ERROR(...)         ::SAMURAI::Log::GetClientLogger()->error(__VA_ARGS__)
-#define SAMURAI_CRITICAL(...)      ::SAMURAI::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define LOG_TRACE(...)        ::Samurai::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define LOG_INFO(...)         ::Samurai::Log::GetClientLogger()->info(__VA_ARGS__)
+#define LOG_WARN(...)         ::Samurai::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define LOG_ERROR(...)        ::Samurai::Log::GetClientLogger()->error(__VA_ARGS__)
+#define LOG_CRITICAL(...)     ::Samurai::Log::GetClientLogger()->critical(__VA_ARGS__)

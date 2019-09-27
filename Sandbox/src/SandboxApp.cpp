@@ -5,8 +5,7 @@ class Sandbox : public Samurai::Application
 public:
 	Sandbox()
 	{
-		Samurai::Log::Init();
-		//Samurai_CORE_WARN("Initialized Log!");
+		LOG_INFO("Application Initialized");
 	}
 
 	~Sandbox()

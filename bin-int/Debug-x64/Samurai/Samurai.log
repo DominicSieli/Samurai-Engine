@@ -1,9 +1,12 @@
-﻿  Log.cpp
-C:\Samurai-Engine\Samurai\Samurai\src\Samurai\Log.h(17,57): warning C4251:  'Samurai::Log::sPtr_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Samurai::Log'
+﻿  Application.cpp
+C:\Samurai-Engine\Samurai\Samurai\src\Samurai\Log.h(18,57): warning C4251:  'Samurai::Log::sPtr_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Samurai::Log'
 C:\Samurai-Engine\Samurai\Samurai\vendor\spdlog\include\spdlog\details\registry.h(33): message :  see declaration of 'std::shared_ptr<spdlog::logger>'
-C:\Samurai-Engine\Samurai\Samurai\src\Samurai\Log.h(18,59): warning C4251:  'Samurai::Log::sPtr_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Samurai::Log'
-  Application.cpp
+C:\Samurai-Engine\Samurai\Samurai\src\Samurai\Log.h(19,59): warning C4251:  'Samurai::Log::sPtr_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Samurai::Log'
+  Log.cpp
+C:\Samurai-Engine\Samurai\Samurai\vendor\spdlog\include\spdlog\details\registry.h(33): message :  see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\Samurai-Engine\Samurai\Samurai\src\Samurai\Log.h(18,57): warning C4251:  'Samurai::Log::sPtr_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Samurai::Log'
+C:\Samurai-Engine\Samurai\Samurai\vendor\spdlog\include\spdlog\details\registry.h(33): message :  see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\Samurai-Engine\Samurai\Samurai\src\Samurai\Log.h(19,59): warning C4251:  'Samurai::Log::sPtr_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Samurai::Log'
   Generating Code...
 C:\Samurai-Engine\Samurai\Samurai\vendor\spdlog\include\spdlog\details\registry.h(33): message :  see declaration of 'std::shared_ptr<spdlog::logger>'
-     Creating library C:\Samurai-Engine\Samurai\\bin\Debug-x64\Samurai\Samurai.lib and object C:\Samurai-Engine\Samurai\\bin\Debug-x64\Samurai\Samurai.exp
   Samurai.vcxproj -> C:\Samurai-Engine\Samurai\\bin\Debug-x64\Samurai\Samurai.dll

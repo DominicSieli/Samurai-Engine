@@ -30,18 +30,12 @@
     <ClInclude Include="src\Samurai.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\IncludeFiles.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Samurai\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Samurai\Log.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\IncludeFiles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

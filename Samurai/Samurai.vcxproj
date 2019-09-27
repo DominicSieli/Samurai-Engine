@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\IncludeFiles.h" />
     <ClInclude Include="src\Samurai\Log.h" />
     <ClInclude Include="src\Samurai\Application.h" />
     <ClInclude Include="src\Samurai\Core.h" />
@@ -19,7 +18,6 @@
     <ClInclude Include="src\Samurai.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\IncludeFiles.cpp" />
     <ClCompile Include="src\Samurai\Log.cpp" />
     <ClCompile Include="src\Samurai\Application.cpp" />
   </ItemGroup>
