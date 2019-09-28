@@ -1,4 +1,4 @@
-#include <Samurai.h>
+#include "Samurai.h"
 
 class Sandbox : public Samurai::Application
 {
