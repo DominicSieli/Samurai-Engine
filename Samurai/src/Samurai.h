@@ -1,5 +1,5 @@
 #pragma once
 
-#include "Samurai/Log.h"
+#include "SamuraiPCH.h"
 #include "Samurai/Application.h"
 #include "Samurai/EntryPoint.h"

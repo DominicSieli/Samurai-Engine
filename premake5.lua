@@ -26,6 +26,9 @@ project "Samurai"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 	
+	pchheader "SamuraiPCH.h"
+	pchsource "%{prj.name}/src/SamuraiPCH.cpp"
+	
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -34,8 +37,8 @@ project "Samurai"
 	
 	includedirs
 	{
-		"Samurai/src",
-		"Samurai/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include"
 	}
 	
 	filter "system:windows"

@@ -1,4 +1,4 @@
-#include "Log.h"
+#include "SamuraiPCH.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
 namespace Samurai
