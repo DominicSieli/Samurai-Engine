@@ -5,18 +5,26 @@
 
 namespace Samurai
 {
-	// Events in Hazel are currently blocking, meaning when an event occurs it
-	// immediately gets dispatched and must be dealt with right then an there.
-	// For the future, a better strategy might be to buffer events in an event
-	// bus and process them during the "event" part of the update stage.
+	// To do: Implement event buffer system.
 
 	enum class EventType
 	{
 		None = 0,
-		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
-		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased, KeyTyped,
-		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
+		WindowClose = 1,
+		WindowResize = 2,
+		WindowFocus = 3,
+		WindowLostFocus = 4,
+		WindowMoved = 5,
+		AppTick = 6,
+		AppUpdate = 7,
+		AppRender = 8,
+		KeyPressed = 9,
+		KeyReleased = 10,
+		KeyTyped = 11,
+		MouseButtonPressed = 12,
+		MouseButtonReleased = 13,
+		MouseMoved = 14,
+		MouseScrolled = 15
 	};
 
 	enum EventCategory
@@ -30,8 +38,8 @@ namespace Samurai
 	};
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
-								virtual EventType GetEventType() const override { return GetStaticType(); }\
-								virtual const char* GetName() const override { return #type; }
+                               virtual EventType GetEventType() const override { return GetStaticType(); }\
+                               virtual const char* GetName() const override { return #type; }
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
@@ -54,9 +62,9 @@ namespace Samurai
 	class EventDispatcher
 	{
 	public:
-		EventDispatcher(Event& event)
-			: m_Event(event)
+		EventDispatcher(Event& event) : m_Event(event)
 		{
+
 		}
 
 		// F will be deduced by the compiler

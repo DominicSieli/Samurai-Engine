@@ -21,7 +21,8 @@ namespace Samurai
 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+
 	private:
 		unsigned int m_Width, m_Height;
 	};
@@ -32,7 +33,7 @@ namespace Samurai
 		WindowCloseEvent() {}
 
 		EVENT_CLASS_TYPE(WindowClose)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
 	class SAMURAI_API AppTickEvent : public Event
@@ -41,7 +42,7 @@ namespace Samurai
 		AppTickEvent() {}
 
 		EVENT_CLASS_TYPE(AppTick)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
 	class SAMURAI_API AppUpdateEvent : public Event
@@ -50,7 +51,7 @@ namespace Samurai
 		AppUpdateEvent() {}
 
 		EVENT_CLASS_TYPE(AppUpdate)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
 	class SAMURAI_API AppRenderEvent : public Event
@@ -59,6 +60,6 @@ namespace Samurai
 		AppRenderEvent() {}
 
 		EVENT_CLASS_TYPE(AppRender)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 }
