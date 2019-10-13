@@ -1,9 +1,10 @@
 #Directories
 .vs/
 .Utilities/
+.Libraries/
 .Binaries/
 .Binaries-Intermediate/
-.Samurai/Libraries/
 
 #Files
 *.user
+*.proj
