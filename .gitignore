@@ -1,10 +1,10 @@
 #Directories
 .vs/
-.Utilities/
-.Libraries/
 .Binaries/
 .Binaries-Intermediate/
 
 #Files
+*.sln
 *.user
-*.proj
+*.filters
+*.vcxproj
