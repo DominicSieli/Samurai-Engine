@@ -23,22 +23,22 @@ project "Samurai"
 	cppdialect "C++17"
 	staticruntime "on"
 	
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("Binaries/" .. outputdir .. "/%{prj.name}")
+	objdir ("Binaries-Intermediate/" .. outputdir .. "/%{prj.name}")
 	
 	pchheader "SamuraiPCH.h"
-	pchsource "%{prj.name}/src/SamuraiPCH.cpp"
+	pchsource "%{prj.name}/Source/SamuraiPCH.cpp"
 	
 	files
 	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/Source/**.h",
+		"%{prj.name}/Source/**.cpp"
 	}
 	
 	includedirs
 	{
-		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/Source",
+		"%{prj.name}/Libraries/spdlog/include"
 	}
 	
 	filter "system:windows"
@@ -75,19 +75,19 @@ project "Sandbox"
 	cppdialect "C++17"
 	staticruntime "on"
 	
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("Binaries/" .. outputdir .. "/%{prj.name}")
+	objdir ("Binaries-Intermediate/" .. outputdir .. "/%{prj.name}")
 	
 	files
 	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/Source/**.h",
+		"%{prj.name}/Source/**.cpp"
 	}
 	
 	includedirs
 	{
-		"Samurai/src",
-		"Samurai/vendor/spdlog/include"
+		"Samurai/Source",
+		"Samurai/Libraries/spdlog/include"
 	}
 	
 	links
