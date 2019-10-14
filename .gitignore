@@ -1,7 +1,8 @@
 #Directories
 .vs/
-.bin/
-.bin-int/
+.Binaries/
+.Binaries-Intermediate/
+.Samurai/Libraries/
 
 #Files
 *.user
