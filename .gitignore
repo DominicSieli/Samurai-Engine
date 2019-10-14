@@ -3,6 +3,7 @@
 .Binaries/
 .Binaries-Intermediate/
 .Samurai/Libraries/
+.Samurai/Libraries/spdlog/
 
 #Files
 *.user
