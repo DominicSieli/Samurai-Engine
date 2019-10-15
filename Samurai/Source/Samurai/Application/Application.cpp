@@ -1,5 +1,6 @@
-#include "SamuraiPCH.h"
-#include "Application.h"
+#include "PCH.h"
+#include "Samurai/Log/Log.h"
+#include "Samurai/Application/Application.h"
 
 namespace Samurai
 {

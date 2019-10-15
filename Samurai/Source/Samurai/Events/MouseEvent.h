@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Event.h"
+#include "Samurai/Events/Event.h"
 
 namespace Samurai
 {

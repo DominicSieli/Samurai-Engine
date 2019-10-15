@@ -26,8 +26,8 @@ project "Samurai"
 	targetdir ("Binaries/" .. outputdir .. "/%{prj.name}")
 	objdir ("Binaries-Intermediate/" .. outputdir .. "/%{prj.name}")
 	
-	pchheader "SamuraiPCH.h"
-	pchsource "%{prj.name}/Source/SamuraiPCH.cpp"
+	pchheader "PCH.h"
+	pchsource "%{prj.name}/Source/PCH.cpp"
 	
 	files
 	{
@@ -38,7 +38,7 @@ project "Samurai"
 	includedirs
 	{
 		"%{prj.name}/Source",
-		"%{prj.name}/Libraries/spdlog/include"
+		"%{prj.name}/Libraries/SPD-Log/include"
 	}
 	
 	filter "system:windows"
@@ -87,7 +87,7 @@ project "Sandbox"
 	includedirs
 	{
 		"Samurai/Source",
-		"Samurai/Libraries/spdlog/include"
+		"Samurai/Libraries/SPD-Log/include"
 	}
 	
 	links

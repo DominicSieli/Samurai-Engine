@@ -1,5 +1,6 @@
 #pragma once
 
-#include "SamuraiPCH.h"
-#include "Samurai/Application.h"
-#include "Samurai/EntryPoint.h"
+#include "PCH.h"
+#include "Samurai/Log/Log.h"
+#include "Samurai/Application/Application.h"
+#include "Samurai/Application/EntryPoint.h"

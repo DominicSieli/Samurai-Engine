@@ -13,8 +13,6 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Samurai/Log.h"
-
 #ifdef SAMURAI_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SamuraiPCH.h"
-#include "Samurai/Core.h"
+#include "PCH.h"
+#include "Samurai/Core/Core.h"
 
 namespace Samurai
 {

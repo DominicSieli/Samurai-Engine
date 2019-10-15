@@ -1,9 +1,8 @@
 #pragma once
 
-#include <memory>
-
-#include "Core.h"
+#include "PCH.h"
 #include "spdlog/spdlog.h"
+#include "Samurai/Core/Core.h"
 
 namespace Samurai
 {
