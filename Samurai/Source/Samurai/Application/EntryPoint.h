@@ -2,13 +2,12 @@
 
 #ifdef SAMURAI_PLATFORM_WINDOWS
 
-extern Samurai::Application* Samurai::CreateApplication();
-Samurai::Application* application = Samurai::CreateApplication();
+extern Samurai::Game* game = Samurai::CreateGame();
 
 int main(int argc, char** argv)
 {
-	application->Run();
-	delete application;
+	game->Run();
+	delete game;
 }
 
 #endif

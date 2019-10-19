@@ -67,7 +67,7 @@ project "Samurai"
 	
 	filter {"system:windows", "configurations:Release"}
 		buildoptions "/MT"
-
+	
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"

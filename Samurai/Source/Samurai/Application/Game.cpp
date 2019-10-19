@@ -1,20 +1,21 @@
 #include "PCH.h"
 #include "Samurai/Log/Log.h"
-#include "Samurai/Application/Application.h"
+#include "Samurai/Application/Game.h"
 
 namespace Samurai
 {
-	Application::Application()
+	Game::Game()
 	{
 		Samurai::Log::Init();
+		SAMURAI_INFO("Logging Initialized");
 	};
 
-	Application::~Application()
+	Game::~Game()
 	{
 
 	};
 
-	void Application::Run()
+	void Game::Run()
 	{
 		while(true);
 	}
