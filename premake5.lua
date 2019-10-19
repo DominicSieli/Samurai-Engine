@@ -46,8 +46,8 @@ project "Samurai"
 		
 		defines
 		{
-			"SAMURAI_PLATFORM_WINDOWS",
-			"SAMURAI_BUILD_DLL"
+			"SAMURAI_BUILD_DLL",
+			"SAMURAI_PLATFORM_WINDOWS"
 		}
 	
 	filter "configurations:Debug"
