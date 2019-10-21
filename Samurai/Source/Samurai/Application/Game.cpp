@@ -6,8 +6,8 @@ namespace Samurai
 {
 	Game::Game()
 	{
-		Samurai::Log::Init();
-		LOG_INFO("Logging Initialized");
+		INITIALIZE_LOG
+		LOG_INFO("Logging Initialized")
 	};
 
 	Game::~Game()

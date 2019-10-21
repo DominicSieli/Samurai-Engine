@@ -7,7 +7,7 @@ namespace SandboxGame
 	public:
 		Game()
 		{
-			LOG_INFO("Game Initialized");
+			LOG_INFO("Game Initialized")
 		}
 
 		~Game()

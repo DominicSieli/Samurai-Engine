@@ -7,24 +7,25 @@ namespace Samurai
 	class SAMURAI_API WindowResizeEvent : public Event
 	{
 	public:
-		WindowResizeEvent(unsigned int width, unsigned int height)
-			: m_Width(width), m_Height(height) {}
+		WindowResizeEvent(unsigned int widthValue, unsigned int heightValue)
+			: width(widthValue), height(heightValue) {}
 
-		inline unsigned int GetWidth() const { return m_Width; }
-		inline unsigned int GetHeight() const { return m_Height; }
+		inline unsigned int GetWidth() const { return width; }
+		inline unsigned int GetHeight() const { return height; }
 
 		std::string ToString() const override
 		{
-			std::stringstream ss;
-			ss << "WindowResizeEvent: " << m_Width << ", " << m_Height;
-			return ss.str();
+			std::stringstream stringstr;
+			stringstr << "WindowResizeEvent: " << width << ", " << height;
+			return stringstr.str();
 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 
 	private:
-		unsigned int m_Width, m_Height;
+		unsigned int width = 0;
+		unsigned int height = 0;
 	};
 
 	class SAMURAI_API WindowCloseEvent : public Event
@@ -36,30 +37,30 @@ namespace Samurai
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class SAMURAI_API AppTickEvent : public Event
+	class SAMURAI_API TickEvent : public Event
 	{
 	public:
-		AppTickEvent() {}
+		TickEvent() {}
 
-		EVENT_CLASS_TYPE(AppTick)
+		EVENT_CLASS_TYPE(Tick)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class SAMURAI_API AppUpdateEvent : public Event
+	class SAMURAI_API UpdateEvent : public Event
 	{
 	public:
-		AppUpdateEvent() {}
+		UpdateEvent() {}
 
-		EVENT_CLASS_TYPE(AppUpdate)
+		EVENT_CLASS_TYPE(Update)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class SAMURAI_API AppRenderEvent : public Event
+	class SAMURAI_API RenderEvent : public Event
 	{
 	public:
-		AppRenderEvent() {}
+		RenderEvent() {}
 
-		EVENT_CLASS_TYPE(AppRender)
+		EVENT_CLASS_TYPE(Render)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 }

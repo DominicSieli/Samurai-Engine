@@ -7,7 +7,7 @@ namespace Samurai
 	std::shared_ptr<spdlog::logger> Log::sPtr_SamuraiLogger;
 	std::shared_ptr<spdlog::logger> Log::sPtr_ClientLogger;
 
-	void Log::Init()
+	void Log::Initialize()
 	{
 		spdlog::set_pattern("%^[%T] %n: %v%$");
 		sPtr_SamuraiLogger = spdlog::stdout_color_mt("SAMURAI");

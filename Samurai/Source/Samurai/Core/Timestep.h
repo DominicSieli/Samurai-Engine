@@ -5,16 +5,27 @@ namespace Samurai
 	class Timestep
 	{
 	public:
-		Timestep(float time = 0.0f) : m_Time(time)
+		Timestep(float value = 0.00f) : time(value)
 		{
 
 		}
 
-		operator float() const { return m_Time; }
+		operator float() const
+		{
+			return time;
+		}
 
-		float GetSeconds() const { return m_Time; }
-		float GetMilliseconds() const { return m_Time * 1000.0f; }
+		float GetSeconds() const
+		{
+			return time;
+		}
+
+		float GetMilliseconds() const
+		{
+			return time * 1000.00f;
+		}
+
 	private:
-		float m_Time;
+		float time = 0.00f;
 	};
 }

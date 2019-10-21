@@ -5,8 +5,7 @@ workspace "Samurai"
 	configurations
 	{
 		"Debug",
-		"Release",
-		"Master"
+		"Release"
 	}
 	
 	flags
@@ -60,11 +59,6 @@ project "Samurai"
 		runtime "Release"
 		optimize "on"
 	
-	filter "configurations:Master"
-		defines "SAMURAI_MASTER"
-		runtime "Release"
-		optimize "on"
-	
 	filter {"system:windows", "configurations:Release"}
 		buildoptions "/MT"
 	
@@ -110,10 +104,5 @@ project "Sandbox"
 	
 	filter "configurations:Release"
 		defines "SAMURAI_RELEASE"
-		runtime "Release"
-		optimize "on"
-	
-	filter "configurations:Master"
-		defines "SAMURAI_MASTER"
 		runtime "Release"
 		optimize "on"
