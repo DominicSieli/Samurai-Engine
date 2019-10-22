@@ -10,20 +10,21 @@ namespace Samurai
 	{
 	public:
 		static void Initialize();
+		using spdLogger = std::shared_ptr<spdlog::logger>;
 
-		inline static std::shared_ptr<spdlog::logger>& SamuraiLogger()
+		inline static spdLogger& SamuraiLogger()
 		{
-			return sPtr_SamuraiLogger;
+			return samuraiLogger;
 		}
 
-		inline static std::shared_ptr<spdlog::logger>& ClientLogger()
+		inline static spdLogger& ClientLogger()
 		{
-			return sPtr_ClientLogger;
+			return clientLogger;
 		}
 
 	private:
-		static std::shared_ptr<spdlog::logger> sPtr_SamuraiLogger;
-		static std::shared_ptr<spdlog::logger> sPtr_ClientLogger;
+		static spdLogger samuraiLogger;
+		static spdLogger clientLogger;
 	};
 }
 
@@ -34,7 +35,7 @@ namespace Samurai
 		#define LOG ClientLogger()
 	#endif
 	
-	#define INITIALIZE_LOG ::Samurai::Log::Initialize();
+	#define INITIALIZE_LOGGER ::Samurai::Log::Initialize();
 	
 	#define LOG_TRACE(...)        ::Samurai::Log::LOG->trace(__VA_ARGS__);
 	#define LOG_INFO(...)         ::Samurai::Log::LOG->info(__VA_ARGS__);
@@ -42,7 +43,8 @@ namespace Samurai
 	#define LOG_ERROR(...)        ::Samurai::Log::LOG->error(__VA_ARGS__);
 	#define LOG_CRITICAL(...)     ::Samurai::Log::LOG->critical(__VA_ARGS__);
 #else
-	#define INITIALIZE_LOG
+	#define INITIALIZE_LOGGER
+	
 	#define LOG_TRACE(...)
 	#define LOG_INFO(...)
 	#define LOG_WARN(...)
