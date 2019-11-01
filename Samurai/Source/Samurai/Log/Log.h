@@ -1,6 +1,5 @@
 #pragma once
 
-#include "PCH.h"
 #include "spdlog/spdlog.h"
 #include "Samurai/Core/Core.h"
 
@@ -10,6 +9,7 @@ namespace Samurai
 	{
 	public:
 		static void Initialize();
+
 		using spdLogger = std::shared_ptr<spdlog::logger>;
 
 		inline static spdLogger& SamuraiLogger()

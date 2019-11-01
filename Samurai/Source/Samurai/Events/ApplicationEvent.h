@@ -4,11 +4,23 @@
 
 namespace Samurai
 {
+	class SAMURAI_API WindowCloseEvent : public Event
+	{
+	public:
+		WindowCloseEvent()
+		{
+
+		}
+
+		EVENT_CLASS_TYPE(WindowClose)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+
 	class SAMURAI_API WindowResizeEvent : public Event
 	{
 	public:
-		WindowResizeEvent(unsigned int widthValue, unsigned int heightValue)
-			: width(widthValue), height(heightValue) {}
+		WindowResizeEvent(unsigned int w, unsigned int h)
+			: width(w), height(h) {}
 
 		inline unsigned int GetWidth() const { return width; }
 		inline unsigned int GetHeight() const { return height; }
@@ -26,41 +38,5 @@ namespace Samurai
 	private:
 		unsigned int width = 0;
 		unsigned int height = 0;
-	};
-
-	class SAMURAI_API WindowCloseEvent : public Event
-	{
-	public:
-		WindowCloseEvent() {}
-
-		EVENT_CLASS_TYPE(WindowClose)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
-	};
-
-	class SAMURAI_API TickEvent : public Event
-	{
-	public:
-		TickEvent() {}
-
-		EVENT_CLASS_TYPE(Tick)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
-	};
-
-	class SAMURAI_API UpdateEvent : public Event
-	{
-	public:
-		UpdateEvent() {}
-
-		EVENT_CLASS_TYPE(Update)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
-	};
-
-	class SAMURAI_API RenderEvent : public Event
-	{
-	public:
-		RenderEvent() {}
-
-		EVENT_CLASS_TYPE(Render)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 }

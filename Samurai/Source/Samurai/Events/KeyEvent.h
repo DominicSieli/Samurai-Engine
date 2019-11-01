@@ -11,7 +11,8 @@ namespace Samurai
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	protected:
-		KeyEvent(int keycodeValue) : keyCode(keycodeValue) {}
+		KeyEvent(int code)
+			: keyCode(code) {}
 
 		int keyCode;
 	};
@@ -19,15 +20,16 @@ namespace Samurai
 	class SAMURAI_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(int keycodeValue, int repeatCountValue) : KeyEvent(keycodeValue), m_RepeatCount(repeatCountValue) {}
+		KeyPressedEvent(int code, int repeated)
+			: KeyEvent(code), repeatCount(repeated) {}
 
 		inline int GetRepeatCount() const { return repeatCount; }
 
 		std::string ToString() const override
 		{
-			std::stringstream ss;
-			ss << "KeyPressedEvent: " << keyCode << " (" << repeatCount << " repeats)";
-			return ss.str();
+			std::stringstream stringStrm;
+			stringStrm << "KeyPressedEvent: " << keyCode << " (" << repeatCount << " repeats)";
+			return stringStrm.str();
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
@@ -38,13 +40,14 @@ namespace Samurai
 	class SAMURAI_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleasedEvent(int keycodeValue) : KeyEvent(keycodeValue) {}
+		KeyReleasedEvent(int code)
+			: KeyEvent(code) {}
 
 		std::string ToString() const override
 		{
-			std::stringstream ss;
-			ss << "KeyReleasedEvent: " << keyCode;
-			return ss.str();
+			std::stringstream stringStrm;
+			stringStrm << "KeyReleasedEvent: " << keyCode;
+			return stringStrm.str();
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased)
@@ -53,13 +56,14 @@ namespace Samurai
 	class SAMURAI_API KeyTypedEvent : public KeyEvent
 	{
 	public:
-		KeyTypedEvent(int keycodeValue) : KeyEvent(keycodeValue) {}
+		KeyTypedEvent(int code)
+			: KeyEvent(code) {}
 
 		std::string ToString() const override
 		{
-			std::stringstream stringstr;
-			stringstr << "KeyTypedEvent: " << keyCode;
-			return stringstr.str();
+			std::stringstream stringStrm;
+			stringStrm << "KeyTypedEvent: " << keyCode;
+			return stringStrm.str();
 		}
 
 		EVENT_CLASS_TYPE(KeyTyped)

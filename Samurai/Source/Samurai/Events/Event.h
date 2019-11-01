@@ -3,50 +3,42 @@
 #include "PCH.h"
 #include "Samurai/Core/Core.h"
 
-#define BITSHIFT(x) (1 << x)
-
 namespace Samurai
 {
-	// To do: Implement event que system.
-
 	enum class EventType
 	{
 		None = 0,
+		
+		KeyTyped = 1,
+		KeyPressed = 2,
+		KeyReleased = 3,
 
-		Tick = 1,
-		Update = 2,
-		Render = 3,
+		WindowClose = 4,
+		WindowFocus = 5,
+		WindowMoved = 6,
+		WindowResize = 7,
+		WindowLostFocus = 8,
 
-		KeyTyped = 4,
-		KeyPressed = 5,
-		KeyReleased = 6,
-
-		WindowClose = 7,
-		WindowFocus = 8,
-		WindowMoved = 9,
-		WindowResize = 10,
-		WindowLostFocus = 11,
-
-		MouseMoved = 12,
-		MouseScrolled = 13,
-		MouseButtonPressed = 14,
-		MouseButtonReleased = 15
+		MouseMoved = 9,
+		MouseScrolled = 10,
+		MouseButtonPressed = 11,
+		MouseButtonReleased = 12
 	};
 
 	enum EventCategory
 	{
 		None = 0,
 		
-		EventCategoryInput = BITSHIFT(0),
-		EventCategoryMouse = BITSHIFT(1),
-		EventCategoryKeyboard = BITSHIFT(2),
-		EventCategoryMouseButton = BITSHIFT(3),
-		EventCategoryApplication = BITSHIFT(4)
+		EventCategoryInput = (1 << 0),
+		EventCategoryMouse = (1 << 1),
+		EventCategoryKeyboard = (1 << 2),
+		EventCategoryMouseButton = (1 << 3),
+		EventCategoryApplication = (1 << 4)
 	};
 
-#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::type; }\
-                               virtual EventType GetEventType() const override { return GetStaticType(); }\
-                               virtual const char* GetName() const override { return type; }
+#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
+								virtual EventType GetEventType() const override { return GetStaticType(); }\
+								virtual const char* GetName() const override { return #type; }
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
@@ -73,20 +65,18 @@ namespace Samurai
 	class EventDispatcher
 	{
 	public:
-		EventDispatcher(Event& eventID) : event(eventID)
-		{
-
-		}
-
-		// F will be deduced by the compiler
+		EventDispatcher(Event& eventID)
+			: event(eventID) {}
+		
 		template<typename T, typename F>
 		bool Dispatch(const F& function)
 		{
-			if (event.GetEventType() == T::GetStaticType())
+			if(event.GetEventType() == T::GetStaticType())
 			{
 				event.handled = function(static_cast<T&>(event));
 				return true;
 			}
+
 			return false;
 		}
 	private:
