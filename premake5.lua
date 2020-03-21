@@ -37,7 +37,7 @@ project "Samurai"
 	includedirs
 	{
 		"%{prj.name}/Source",
-		"%{prj.name}/Libraries/SPD-Log/include"
+		--"%{prj.name}/Libraries/ImGUI"
 	}
 	
 	filter "system:windows"
@@ -45,17 +45,17 @@ project "Samurai"
 		
 		defines
 		{
-			"SAMURAI_BUILD_DLL",
-			"SAMURAI_PLATFORM_WINDOWS"
+			"BUILD_DLL",
+			"PLATFORM_WINDOWS"
 		}
 	
 	filter "configurations:Debug"
-		defines "SAMURAI_DEBUG"
+		defines "DEBUG"
 		runtime "Debug"
 		symbols "on"
 	
 	filter "configurations:Release"
-		defines "SAMURAI_RELEASE"
+		defines "RELEASE"
 		runtime "Release"
 		optimize "on"
 	
@@ -81,7 +81,7 @@ project "Sandbox"
 	includedirs
 	{
 		"Samurai/Source",
-		"Samurai/Libraries/SPD-Log/include"
+		--"%{prj.name}/Libraries/ImGUI"
 	}
 	
 	links
@@ -94,15 +94,15 @@ project "Sandbox"
 		
 		defines
 		{
-			"SAMURAI_PLATFORM_WINDOWS"
+			"PLATFORM_WINDOWS"
 		}
 	
 	filter "configurations:Debug"
-		defines "SAMURAI_DEBUG"
+		defines "DEBUG"
 		runtime "Debug"
 		symbols "on"
 	
 	filter "configurations:Release"
-		defines "SAMURAI_RELEASE"
+		defines "RELEASE"
 		runtime "Release"
 		optimize "on"

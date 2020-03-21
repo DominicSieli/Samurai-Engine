@@ -1,7 +1,6 @@
 #pragma once
 
 #include "PCH.h"
-#include "Samurai/Core/Core.h"
 
 namespace Samurai
 {
@@ -42,7 +41,7 @@ namespace Samurai
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class SAMURAI_API Event
+	class Event
 	{
 	public:
 		bool handled = false;
@@ -64,9 +63,15 @@ namespace Samurai
 
 	class EventDispatcher
 	{
+	private:
+		Event& event;
+
 	public:
 		EventDispatcher(Event& eventID)
-			: event(eventID) {}
+			: event(eventID)
+		{
+
+		}
 		
 		template<typename T, typename F>
 		bool Dispatch(const F& function)
@@ -79,8 +84,6 @@ namespace Samurai
 
 			return false;
 		}
-	private:
-		Event& event;
 	};
 
 	inline std::ostream& operator<<(std::ostream& output, const Event& eventID)

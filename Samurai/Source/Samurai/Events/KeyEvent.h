@@ -4,26 +4,42 @@
 
 namespace Samurai
 {
-	class SAMURAI_API KeyEvent : public Event
+	class KeyEvent : public Event
 	{
+	protected:
+		int keyCode;
+
 	public:
-		inline int GetKeyCode() const { return keyCode; }
+		inline int GetKeyCode() const
+		{
+			return keyCode;
+		}
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
-	protected:
-		KeyEvent(int code)
-			: keyCode(code) {}
 
-		int keyCode;
+		KeyEvent(int code)
+			: keyCode(code)
+		{
+
+		}
 	};
 
-	class SAMURAI_API KeyPressedEvent : public KeyEvent
+	class KeyPressedEvent : public KeyEvent
 	{
+	private:
+		int repeatCount;
+
 	public:
 		KeyPressedEvent(int code, int repeated)
-			: KeyEvent(code), repeatCount(repeated) {}
+			: KeyEvent(code), repeatCount(repeated)
+		{
 
-		inline int GetRepeatCount() const { return repeatCount; }
+		}
+
+		inline int GetRepeatCount() const
+		{
+			return repeatCount;
+		}
 
 		std::string ToString() const override
 		{
@@ -33,15 +49,16 @@ namespace Samurai
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
-	private:
-		int repeatCount;
 	};
 
-	class SAMURAI_API KeyReleasedEvent : public KeyEvent
+	class KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int code)
-			: KeyEvent(code) {}
+			: KeyEvent(code)
+		{
+
+		}
 
 		std::string ToString() const override
 		{
@@ -53,11 +70,14 @@ namespace Samurai
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
-	class SAMURAI_API KeyTypedEvent : public KeyEvent
+	class KeyTypedEvent : public KeyEvent
 	{
 	public:
 		KeyTypedEvent(int code)
-			: KeyEvent(code) {}
+			: KeyEvent(code)
+		{
+
+		}
 
 		std::string ToString() const override
 		{

@@ -1,3 +1,0 @@
-[submodule "Samurai/Libraries/SPD-Log"]
-	path = Samurai/Libraries/SPD-Log
-	url = https://github.com/gabime/spdlog

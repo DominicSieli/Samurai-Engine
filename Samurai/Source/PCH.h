@@ -13,6 +13,6 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#ifdef SAMURAI_PLATFORM_WINDOWS
-	#include <Windows.h>
+#ifdef PLATFORM_WINDOWS
+	#include <windows.h>
 #endif

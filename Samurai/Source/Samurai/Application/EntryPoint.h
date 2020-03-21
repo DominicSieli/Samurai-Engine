@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef SAMURAI_PLATFORM_WINDOWS
+#ifdef PLATFORM_WINDOWS
 
 extern Samurai::Application* application = Samurai::CreateApplication();
 

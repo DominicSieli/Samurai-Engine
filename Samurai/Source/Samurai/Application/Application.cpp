@@ -6,17 +6,19 @@ namespace Samurai
 {
 	Application::Application()
 	{
-		INITIALIZE_LOGGER
-		LOG_INFO("Logging Initialized")
-	};
+		LOG_SUCCESS("Logging Initialized")
+	}
 
 	Application::~Application()
 	{
 
-	};
+	}
 
 	void Application::Run()
 	{
-		while(true);
+		while(true)
+		{
+
+		}
 	}
 }

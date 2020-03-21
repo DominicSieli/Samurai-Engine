@@ -4,14 +4,27 @@
 
 namespace Samurai
 {
-	class SAMURAI_API MouseMovedEvent : public Event
+	class MouseMovedEvent : public Event
 	{
+	private:
+		float mouseX, mouseY;
+
 	public:
 		MouseMovedEvent(float x, float y)
-			: mouseX(x), mouseY(y) {}
+			: mouseX(x), mouseY(y)
+		{
 
-		inline float GetX() const { return mouseX; }
-		inline float GetY() const { return mouseY; }
+		}
+
+		inline float GetX() const
+		{
+			return mouseX;
+		}
+
+		inline float GetY() const
+		{
+			return mouseY;
+		}
 
 		std::string ToString() const override
 		{
@@ -22,19 +35,29 @@ namespace Samurai
 
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-
-	private:
-		float mouseX, mouseY;
 	};
 
-	class SAMURAI_API MouseScrolledEvent : public Event
+	class MouseScrolledEvent : public Event
 	{
+	private:
+		float offsetX, offsetY;
+
 	public:
 		MouseScrolledEvent(float x, float y)
-			: offsetX(x), offsetY(y) {}
+			: offsetX(x), offsetY(y)
+		{
 
-		inline float GetOffsetX() const { return offsetX; }
-		inline float GetOffsetY() const { return offsetY; }
+		}
+
+		inline float GetOffsetX() const
+		{
+			return offsetX;
+		}
+
+		inline float GetOffsetY() const
+		{
+			return offsetY;
+		}
 
 		std::string ToString() const override
 		{
@@ -45,29 +68,36 @@ namespace Samurai
 
 		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-	private:
-		float offsetX, offsetY;
 	};
 
-	class SAMURAI_API MouseButtonEvent : public Event
+	class MouseButtonEvent : public Event
 	{
-	public:
-		inline int GetMouseButton() const { return button; }
-
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-
 	protected:
 		MouseButtonEvent(int buttonID)
-			: button(buttonID) {}
+			: button(buttonID)
+		{
+
+		}
 
 		int button;
+
+	public:
+		inline int GetMouseButton() const
+		{
+			return button;
+		}
+
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	};
 
-	class SAMURAI_API MouseButtonPressedEvent : public MouseButtonEvent
+	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int buttonID)
-			: MouseButtonEvent(buttonID) {}
+			: MouseButtonEvent(buttonID)
+		{
+
+		}
 
 		std::string ToString() const override
 		{
@@ -79,11 +109,14 @@ namespace Samurai
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class SAMURAI_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int buttonID)
-			: MouseButtonEvent(buttonID) {}
+			: MouseButtonEvent(buttonID)
+		{
+
+		}
 
 		std::string ToString() const override
 		{

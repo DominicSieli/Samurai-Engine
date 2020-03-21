@@ -7,7 +7,7 @@ namespace Sandbox
 	public:
 		Application()
 		{
-			LOG_INFO("Application Initialized")
+			LOG_SUCCESS("Application Initialized")
 		}
 
 		~Application()
