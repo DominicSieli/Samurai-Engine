@@ -1,9 +1,10 @@
-#Directories
-.vs/
-.Binaries/
-.Binaries-Intermediate/
-.Samurai/Libraries/
-.Samurai/Libraries/spdlog/
+# Binaries
+**/Binaries/
+Binaries-Intermediate/
 
-#Files
-*.user
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
